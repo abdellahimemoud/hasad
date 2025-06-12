@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "71649895703",
+    "project_id": "hasad-3db1d",
+    "storage_bucket": "hasad-3db1d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:71649895703:android:cb293789db34289618c352",
+        "android_client_info": {
+          "package_name": "com.example.hasad_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "71649895703-k4sev8aenhfh79nkrftg2og7hibk8m6u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hasad_app",
+            "certificate_hash": "5050e4ebb6bcab72234147f4ecd78b5da57ef1dc"
+          }
+        },
+        {
+          "client_id": "71649895703-ddpljt3j7qobn1jhojgh8gdib87qf5ks.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgFvNx3APcTMT99nwB6QI_G0qiL0D4KGA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "71649895703-3rhs6fd6prbopm22j6dm5rn4i0g5hmle.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "71649895703-4l1htrftnh24s85nhm0mm1fr8kjmv73h.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.hasadApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
