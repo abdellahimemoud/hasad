@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ProfilePopup extends StatelessWidget {
   const ProfilePopup({super.key});
@@ -27,8 +28,8 @@ class ProfilePopup extends StatelessWidget {
               // Header
               Row(
                 children: [
-                  const Text(
-                    'Profile',
+                  Text(
+                    AppLocalizations.of(context)!.profile,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
@@ -78,7 +79,7 @@ class ProfilePopup extends StatelessWidget {
                   _showEditDialog(context, user);
                 },
                 icon: const Icon(Icons.edit, size: 18),
-                label: const Text("Edit Profile"),
+                label: Text(AppLocalizations.of(context)!.editProfile),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFF173F35),
                   foregroundColor: Colors.white,
@@ -109,8 +110,8 @@ class ProfilePopup extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Text(
-                "Edit Your Name",
+              Text(
+                AppLocalizations.of(context)!.editProfile,
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
@@ -145,8 +146,8 @@ class ProfilePopup extends StatelessWidget {
                 children: [
                   TextButton(
                     onPressed: () => Navigator.pop(ctx),
-                    child: const Text(
-                      "Cancel",
+                    child: Text(
+                      AppLocalizations.of(context)!.cancel,
                       style: TextStyle(color: Colors.red),
                     ),
                   ),
@@ -180,7 +181,7 @@ class ProfilePopup extends StatelessWidget {
                         }
                       }
                     },
-                    child: const Text("Save"),
+                    child: Text(AppLocalizations.of(context)!.save),
                   ),
                 ],
               ),

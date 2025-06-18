@@ -35,7 +35,9 @@ class _HomePageState extends State<HomePage> {
 
   Future<void> loadWeather() async {
     try {
-      final data = await WeatherService.getOpenWeatherData("Nouakchott");
+      //final data = await WeatherService.getOpenWeatherData("Nouakchott");
+      final data =
+          await WeatherService.getOpenWeatherData("Bordj Bou Arreridj");
       setState(() {
         weatherData = data;
       });
@@ -446,7 +448,7 @@ class _HomePageState extends State<HomePage> {
           borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
-              color: Colors.grey.shade300,
+              color: const Color.fromARGB(255, 142, 155, 147),
               blurRadius: 8,
               offset: const Offset(2, 4),
             ),
@@ -456,22 +458,22 @@ class _HomePageState extends State<HomePage> {
           children: [
             Image.asset(
               imagePath,
-              height: 50,
+              height: 43,
               fit: BoxFit.contain,
             ),
-            const SizedBox(height: 8),
+            const SizedBox(height: 7),
             Text(
               title,
               style: const TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 14,
+                  fontSize: 13,
                   color: Color(0xFF173F35)),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 4),
             Text(
               description,
-              style: const TextStyle(fontSize: 12, color: Colors.black54),
+              style: const TextStyle(fontSize: 11, color: Colors.black54),
               textAlign: TextAlign.center,
             ),
           ],

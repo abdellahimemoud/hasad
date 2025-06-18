@@ -81,6 +81,10 @@
   "min": "Min",
   "max": "Max",
   "previsionFiveDays": "Forecasts in 5 days",
-  "previsionHor": "Hourly forecasts"
+  "previsionHor": "Hourly forecasts",
+  "noRecoemm": "No recommendation",
+  "selectLanguage": "Choose language",
+  "editProfile": "Edit profile",
+  "save": "Save"
 
 }

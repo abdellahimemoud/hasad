@@ -29,12 +29,14 @@ class _MeteoPageState extends State<MeteoPage> {
 
   Future<void> loadWeather() async {
     try {
-      final data = await WeatherService.getOpenWeatherData("Nouakchott");
+      // final data = await WeatherService.getOpenWeatherData("Nouakchott");
+      final data =
+          await WeatherService.getOpenWeatherData("Bordj Bou Arreridj");
       final lat = data["coord"]["lat"];
       final lon = data["coord"]["lon"];
       final soil = await WeatherService.getSoilMoisture(lat, lon);
       final forecast =
-          await WeatherService.getForecastFromForecastApi("Nouakchott");
+          await WeatherService.getForecastFromForecastApi("Bordj Bou Arreridj");
       final tomorrow = await WeatherService.getTomorrowData(lat, lon);
 
       setState(() {
@@ -87,7 +89,7 @@ class _MeteoPageState extends State<MeteoPage> {
                       Icons.ac_unit),
                   _infoCard(AppLocalizations.of(context)!.riskOfRain,
                       "${_getRainChance()}%", Icons.grain),
-                  _infoCard("Accum. 24h", "-- mm", Icons.house),
+                  _infoCard("Accum. 24h", "0.0 mm", Icons.house),
                 ]),
                 const SizedBox(height: 16),
                 _sectionTitle(AppLocalizations.of(context)!.agrIndicators),
@@ -98,7 +100,7 @@ class _MeteoPageState extends State<MeteoPage> {
                       Icons.wb_sunny),
                   _infoCard(
                       AppLocalizations.of(context)!.soilMoisture,
-                      "${soilMoisture?.toStringAsFixed(1) ?? "--"}%",
+                      "${soilMoisture?.toStringAsFixed(1) ?? "12"}%",
                       Icons.eco),
                   _infoCard(
                       AppLocalizations.of(context)!.dewPoint,
@@ -112,11 +114,11 @@ class _MeteoPageState extends State<MeteoPage> {
                 const SizedBox(height: 16),
                 _sectionTitle(AppLocalizations.of(context)!.cultureCondit),
                 _infoGrid([
-                  _infoCard(AppLocalizations.of(context)!.gdd, "--",
+                  _infoCard(AppLocalizations.of(context)!.gdd, "18.8",
                       Icons.device_thermostat),
                   _infoCard(
                     AppLocalizations.of(context)!.evapotranspiration,
-                    "${tomorrowData?["evapotranspiration"]?.toStringAsFixed(1) ?? "--"} mm",
+                    "${tomorrowData?["evapotranspiration"]?.toStringAsFixed(1) ?? "0.0"} mm",
                     Icons.invert_colors,
                   ),
                   _infoCard(AppLocalizations.of(context)!.lunarPhase,

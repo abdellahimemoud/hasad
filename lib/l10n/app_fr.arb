@@ -8,7 +8,7 @@
   "haveAccount": "Vous avez déjà un compte?",
   "login": "se connecter",
   "forgetPassword": "Mot de passe oublié",
-  "or": "ou",
+  "or": "_____________ ou ______________",
   "continueWithGoogle": "Continuer avec Google",
   "dontHave": "Vous n'avez pas de compte?",
   "weatherConditions": "Conditions météorologiques",
@@ -20,7 +20,7 @@
   "history": "Historique",
   "viewYourPastData": "Voir les détections archivées",
   "weather": "météo",
-  "checkWeatherInfo": "Consulter les info météo",
+  "checkWeatherInfo": "Consulter les informations du météo",
   "sunday": "Dimanche",
   "monday": "Lundi",
   "tuesday": "Mardi",
@@ -81,5 +81,9 @@
   "min": "Min",
   "max": "Max",
   "previsionFiveDays": "Prévisions dans 5 jours",
-  "previsionHor": "Prévisions horaires"
+  "previsionHor": "Prévisions horaires",
+  "noRecoemm": "Aucune recommendation",
+  "selectLanguage": "Choisir langage",
+  "editProfile": "Editer profile",
+  "save": "Enregistrer"
 }

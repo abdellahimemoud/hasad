@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:hasad_app/auth/login_page.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
@@ -52,7 +53,7 @@ class _SignUpPageState extends State<SignUpPage> {
 
         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
           content: Text(
-            "Registration successful! You can now log in.",
+            "Inscription réussie ! Vous pouvez maintenant vous connecter.",
             style: TextStyle(color: Color.fromARGB(255, 243, 248, 243)),
           ),
           backgroundColor: Colors.green,
@@ -97,14 +98,16 @@ class _SignUpPageState extends State<SignUpPage> {
                 const SizedBox(height: 30),
                 Image.asset('assets/login_hasad.png', height: 200),
                 const SizedBox(height: 30),
-                _textField(nameController, Icons.person, "Enter your name"),
+                _textField(nameController, Icons.person,
+                    AppLocalizations.of(context)!.nameHint),
                 const SizedBox(height: 10),
                 _emailField(),
                 const SizedBox(height: 10),
-                _passwordField(passwordController, "Enter your password"),
-                const SizedBox(height: 10),
                 _passwordField(
-                    confirmPasswordController, "Confirm your password",
+                    passwordController, AppLocalizations.of(context)!.passHint),
+                const SizedBox(height: 10),
+                _passwordField(confirmPasswordController,
+                    AppLocalizations.of(context)!.passConfirm,
                     confirm: true),
                 const SizedBox(height: 20),
                 AnimatedSwitcher(
@@ -130,8 +133,8 @@ class _SignUpPageState extends State<SignUpPage> {
                               borderRadius: BorderRadius.circular(30),
                             ),
                           ),
-                          child: const Text(
-                            "Sign Up",
+                          child: Text(
+                            AppLocalizations.of(context)!.signUp,
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
@@ -143,12 +146,12 @@ class _SignUpPageState extends State<SignUpPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text("Already have an account? ",
+                    Text(AppLocalizations.of(context)!.haveAccount,
                         style: TextStyle(color: Color(0xFF1B3B2F))),
                     GestureDetector(
                       onTap: () => Navigator.pop(context),
-                      child: const Text(
-                        "Login",
+                      child: Text(
+                        AppLocalizations.of(context)!.login,
                         style: TextStyle(
                           color: Color(0xFFFFC107),
                           fontWeight: FontWeight.bold,
@@ -204,7 +207,7 @@ class _SignUpPageState extends State<SignUpPage> {
       decoration: _inputDecoration(hint, icon),
       validator: (value) {
         if (value == null || value.trim().isEmpty) {
-          return "This field can't be empty";
+          return "Ce champ ne peut pas être vide";
         }
         return null;
       },
@@ -217,9 +220,11 @@ class _SignUpPageState extends State<SignUpPage> {
       keyboardType: TextInputType.emailAddress,
       style: const TextStyle(
           color: Color(0xFF173F35), fontWeight: FontWeight.w600),
-      decoration: _inputDecoration("Enter your email", Icons.email),
-      validator: (value) =>
-          value != null && isValidEmail(value) ? null : "Enter a valid email",
+      decoration: _inputDecoration(
+          AppLocalizations.of(context)!.emailHint, Icons.email),
+      validator: (value) => value != null && isValidEmail(value)
+          ? null
+          : "Veuillez entrer un email valide",
     );
   }
 
@@ -253,11 +258,11 @@ class _SignUpPageState extends State<SignUpPage> {
       ),
       validator: (value) {
         if (value == null || value.isEmpty) {
-          return "Please enter your password";
+          return "Veuillez entrer votre mot de passe";
         } else if (value.length < 6) {
-          return "Password must be at least 6 characters long";
+          return "Le mot de passe doit contenir au moins 6 caractères";
         } else if (confirm && value != passwordController.text) {
-          return "Passwords do not match";
+          return "Les mots de passe ne correspondent pas";
         }
         return null;
       },

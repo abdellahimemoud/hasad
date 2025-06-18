@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class RecommandationDetailsPage extends StatefulWidget {
   const RecommandationDetailsPage({super.key});
@@ -53,8 +54,8 @@ class _RecommandationDetailsPageState extends State<RecommandationDetailsPage> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text(
-          'Recommandations AI',
+        title: Text(
+          AppLocalizations.of(context)!.recommendations,
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,
@@ -65,7 +66,7 @@ class _RecommandationDetailsPageState extends State<RecommandationDetailsPage> {
         iconTheme: const IconThemeData(color: Colors.white),
       ),
       body: _notifications.isEmpty
-          ? const Center(child: Text('Aucune notification reçue.'))
+          ? Center(child: Text(AppLocalizations.of(context)!.noRecoemm))
           : ListView.builder(
               itemCount: _notifications.length,
               padding: const EdgeInsets.all(16),
@@ -95,7 +96,7 @@ class _RecommandationDetailsPageState extends State<RecommandationDetailsPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         CircleAvatar(
-                          backgroundColor: isAlert ? Colors.red : Colors.green,
+                          backgroundColor: isAlert ? Colors.red : Colors.red,
                           radius: 20,
                           child: const Icon(
                             Icons.notifications,

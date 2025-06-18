@@ -106,7 +106,9 @@ class _LoginPageState extends State<LoginPage> {
       }
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("Google sign-in failed: ${e.toString()}")),
+        SnackBar(
+            content:
+                Text("Échec de la connexion avec Google: ${e.toString()}")),
       );
     } finally {
       setState(() => isGoogleLoading = false);
@@ -150,13 +152,13 @@ class _LoginPageState extends State<LoginPage> {
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Color.fromARGB(255, 37, 100, 84),
                             padding: const EdgeInsets.symmetric(
-                                horizontal: 145, vertical: 18),
+                                horizontal: 110, vertical: 18),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(30),
                             ),
                           ),
-                          child: const Text(
-                            "Log In",
+                          child: Text(
+                            AppLocalizations.of(context)!.login,
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
@@ -166,21 +168,21 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 TextButton(
                   onPressed: resetPassword,
-                  child: const Text(
-                    "Forgot Password?",
+                  child: Text(
+                    AppLocalizations.of(context)!.forgetPassword,
                     style: TextStyle(color: Color(0xFF1B3B2F)),
                   ),
                 ),
                 const SizedBox(height: 10),
-                const Text("____________________  or  ____________________"),
+                Text(AppLocalizations.of(context)!.or),
                 const SizedBox(height: 30),
                 _googleSignInButton(),
                 const Spacer(),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text(
-                      "Don’t have an account? ",
+                    Text(
+                      AppLocalizations.of(context)!.haveAccount,
                       style: TextStyle(color: Color(0xFF1B3B2F)),
                     ),
                     GestureDetector(
@@ -188,8 +190,8 @@ class _LoginPageState extends State<LoginPage> {
                         context,
                         MaterialPageRoute(builder: (_) => const SignUpPage()),
                       ),
-                      child: const Text(
-                        "Sign Up",
+                      child: Text(
+                        AppLocalizations.of(context)!.signUp,
                         style: TextStyle(
                           color: Color(0xFFFFC107),
                           fontWeight: FontWeight.bold,
@@ -242,12 +244,13 @@ class _LoginPageState extends State<LoginPage> {
       keyboardType: TextInputType.emailAddress,
       style: const TextStyle(
           color: Color(0xFF173F35), fontWeight: FontWeight.w600),
-      decoration: _inputDecoration("Enter your email", Icons.email),
+      decoration: _inputDecoration(
+          AppLocalizations.of(context)!.emailHint, Icons.email),
       validator: (value) {
         if (value == null || value.trim().isEmpty) {
-          return "Please enter your email";
+          return "Veuillez saisir votre adresse e-mail";
         } else if (!isValidEmail(value.trim())) {
-          return "Enter a valid email";
+          return "Entrez une adresse e-mail valide";
         }
         return null;
       },
@@ -261,7 +264,7 @@ class _LoginPageState extends State<LoginPage> {
       style: const TextStyle(
           color: Color(0xFF173F35), fontWeight: FontWeight.w600),
       decoration: _inputDecoration(
-        "Enter your password",
+        AppLocalizations.of(context)!.passHint,
         Icons.lock,
         suffixIcon: IconButton(
           icon: Icon(
@@ -277,7 +280,7 @@ class _LoginPageState extends State<LoginPage> {
       ),
       validator: (value) {
         if (value == null || value.isEmpty) {
-          return "Please enter your password";
+          return "Veuillez entrer votre mot de passe";
         } else if (value.length < 6) {
           return "Password must be at least 6 characters long";
         }
@@ -308,8 +311,8 @@ class _LoginPageState extends State<LoginPage> {
                 children: [
                   Image.asset('assets/google_logo.png', height: 24, width: 24),
                   const SizedBox(width: 12),
-                  const Text(
-                    "Continue with Google",
+                  Text(
+                    AppLocalizations.of(context)!.continueWithGoogle,
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.black87,

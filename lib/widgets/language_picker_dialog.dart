@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hasad_app/main.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LanguagePickerDialog extends StatelessWidget {
   const LanguagePickerDialog({super.key});
@@ -14,8 +15,8 @@ class LanguagePickerDialog extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Text(
-              "🌍 Select Language",
+            Text(
+              AppLocalizations.of(context)!.selectLanguage,
               style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,

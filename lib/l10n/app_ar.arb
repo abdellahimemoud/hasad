@@ -14,9 +14,9 @@
   "weatherConditions": "الأحوال الجوية",
   "smartSupport": "الدعم الذكي- حصاد",
   "recommendations": "نصائح ذكية",
-  "getSmartSuggestions": "اعتمد على الذكاء الاصطناعي لتجنب الأضرار",
+  "getSmartSuggestions": "اعتمد علي الذكاء الاصطناعي لتجنب الأضرار",
   "diseaseDetection": "الكشف",
-  "identifyPlantProblems": "اكتشاف مشاكل النباتات",
+  "identifyPlantProblems": "اكتشاف امراض و مشاكل التي تواجها النباتات",
   "history": "سجل الكشف",
   "viewYourPastData": "عمليات الكشف السابقة",
   "weather": "المناخ",
@@ -68,7 +68,7 @@
   "riskOfRain": "إحتمال هطول الأمطار",
   "accum24": "التراكم اليومي",
   "agrIndicators": "المؤشرات الزراعية",
-  "indiceUv": " مؤشر الأشعة فوق البنفسجية",
+  "indiceUv": "الأشعة فوق البنفسجية",
   "soilMoisture": "رطوبة التربة",
   "dewPoint": " نقطة الندى",
   "humidity": "الرطوبة",
@@ -81,5 +81,10 @@
   "min": "الأدنى",
   "max": "القصوى",
   "previsionFiveDays": "حالة الطقس في 5 أيام",
-  "previsionHor": "حالة الطقس فى الساعة"
+  "previsionHor": "حالة الطقس فى الساعة",
+  "noRecoemm": "لا توجد اي اقتراحات",
+  "selectLanguage": "اختر اللغة",
+  "editProfile": "تعديل الملف الشخصي",
+  "save": " حفظ"
+
 }

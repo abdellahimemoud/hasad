@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ContactPopup extends StatelessWidget {
   const ContactPopup({super.key});
@@ -17,8 +18,8 @@ class ContactPopup extends StatelessWidget {
             // Header
             Row(
               children: [
-                const Text(
-                  "Contact Us",
+                Text(
+                  AppLocalizations.of(context)!.contactUs,
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
